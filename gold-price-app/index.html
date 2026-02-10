@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeGold Calculator | Bengaluru</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+
+        <header>
+            <div class="header-content">
+                <h1>LuxeGold <span class="accent">Bengaluru</span></h1>
+                <p class="subtitle">Live Market Rates & Valuation</p>
+                <div class="live-indicator">
+                    <span class="dot"></span> Live Rates (Simulated/Scraped) - <span id="lastUpdated">Updating...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Rates Section -->
+        <section class="rates-grid">
+            <div class="rate-card glass-card" data-metal="gold24k">
+                <div class="card-header">
+                    <i data-lucide="gem"></i>
+                    <span>Gold 24k</span>
+                </div>
+                <div class="rate-value">₹<span id="rate-gold-24k">--</span></div>
+                <div class="rate-unit">per gram</div>
+            </div>
+
+            <div class="rate-card glass-card" data-metal="gold22k">
+                <div class="card-header">
+                    <i data-lucide="award"></i>
+                    <span>Gold 22k</span>
+                </div>
+                <div class="rate-value">₹<span id="rate-gold-22k">--</span></div>
+                <div class="rate-unit">per gram</div>
+            </div>
+
+            <div class="rate-card glass-card" data-metal="gold18k">
+                <div class="card-header">
+                    <i data-lucide="star"></i>
+                    <span>Gold 18k</span>
+                </div>
+                <div class="rate-value">₹<span id="rate-gold-18k">--</span></div>
+                <div class="rate-unit">per gram</div>
+            </div>
+
+            <div class="rate-card glass-card silver" data-metal="silver">
+                <div class="card-header">
+                    <i data-lucide="coins"></i>
+                    <span>Silver</span>
+                </div>
+                <div class="rate-value">₹<span id="rate-silver">--</span></div>
+                <div class="rate-unit">per kg</div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section class="calculator-section glass-panel">
+            <div class="section-header">
+                <h2>Jewellery Cost Estimator</h2>
+                <div class="header-actions">
+                    <button id="downloadBtn" class="btn-secondary" title="Download as PNG">
+                        <i data-lucide="download"></i> Download
+                    </button>
+                    <button id="addItemBtn" class="btn-primary">
+                        <i data-lucide="plus"></i> Add Item
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table id="calcTable">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Metal</th>
+                            <th>Weight (g)</th>
+                            <th>Making (%)</th>
+                            <th>GST (%)</th>
+                            <th>Qty</th>
+                            <th>Total Cost</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows injected via JS -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" class="total-label">Grand Total Bill Amount</td>
+                            <td colspan="2" class="grand-total">₹<span id="grandTotal">0.00</span></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
