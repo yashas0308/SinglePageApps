@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Responsive Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Registration Form</h1>
+            <p>Please fill out the details below.</p>
+        </header>
+
+        <form id="mainForm">
+            <!-- Flexbox Row for inputs -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <div class="select-wrapper">
+                        <select id="department" name="department">
+                            <option value="" disabled selected>Select Department</option>
+                            <option value="hr">Human Resources</option>
+                            <option value="engineering">Engineering</option>
+                            <option value="sales">Sales</option>
+                            <option value="marketing">Marketing</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" name="startDate">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group toggle-group">
+                    <span class="toggle-label">Enable Notifications</span>
+                    <label class="switch">
+                        <input type="checkbox" id="notifications">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                  <div class="form-group toggle-group">
+                    <span class="toggle-label">Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+
+            <!-- Dynamic Table Section -->
+            <div class="table-section">
+                <div class="table-header">
+                    <h3>Project Details</h3>
+                    <button type="button" id="addRowBtn" class="btn btn-primary">+ Add Entry</button>
+                </div>
+                <div class="table-container">
+                    <table id="projectsTable">
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be added dynamically here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-submit">Submit Form</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
